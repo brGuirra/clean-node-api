@@ -3,7 +3,8 @@
     "target": "ES2018",
     "types": ["node", "jest"],
     "module": "commonjs",
-    "lib": ["es2018", "esnext.asynciterable"],
+    "moduleResolution": "node",
+    "lib": ["es2018"],
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "baseUrl": "src",
@@ -13,8 +14,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "paths": {}
+    "experimentalDecorators": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]
