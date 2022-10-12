@@ -1,25 +1,27 @@
 import { HttpRequest, HttpResponse } from 'presentation/protocols/http';
 
+import { MissingParamError } from 'presentation/errors/missing-param';
+
 export class SignUpController {
   public handle(httpRequest: HttpRequest): HttpResponse {
     if (!httpRequest.body.name) {
       return {
         statusCode: 400,
-        body: new Error('Missing param: name'),
+        body: new MissingParamError('name'),
       };
     }
 
     if (!httpRequest.body.email) {
       return {
         statusCode: 400,
-        body: new Error('Missing param: email'),
+        body: new MissingParamError('email'),
       };
     }
 
     if (!httpRequest.body.passwordConfirmation) {
       return {
         statusCode: 400,
-        body: new Error('Missing param: password confirmation'),
+        body: new MissingParamError('password confirmation'),
       };
     }
 
@@ -29,3 +31,5 @@ export class SignUpController {
     };
   }
 }
+
+console.log('Teste');
