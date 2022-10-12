@@ -26,7 +26,9 @@
     "prepare": "husky install",
     "dev": "ts-node-dev --transpile-only --no-notify --exit-child src/index.ts",
     "commit": "git-cz",
-    "lint": "eslint src/**/*.ts --fix"
+    "lint": "eslint src/**/*.ts --fix",
+    "test": "jest --passWithNoTests --runInBand --no-cache",
+    "test:staged": "yarn test -- --findRelatedTests"
   },
   "config": {
     "commitizen": {
